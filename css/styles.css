@@ -1,0 +1,76 @@
+body {
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario {
+    border: 1px solid #ccc;
+    padding: 30px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
+}
+
+form#mi-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fecha-hora {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.fecha, .hora {
+    width: 48%;
+    padding: 15px;
+    text-align: left;
+}
+
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="date"] {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+select#hora {
+    width: 111%;
+    height: 60px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="submit"] {
+    background-color: rgb(63, 198, 243);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(63, 170, 243);
+}
