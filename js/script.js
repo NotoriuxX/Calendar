@@ -82,44 +82,47 @@
 
 
   //--------------------alertas----------------------------------
+  let fecha; //aqui almacenos los datos fecha y hora para usarlo en SIMPLE
+  let hora;
+  
   const form = document.querySelector("form");
-form.addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  const fecha = form.elements.fecha.value;
-  const hora = form.elements.hora.value;
-
-  fetch("subir_datos.php", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded"
-    },
-    body: `fecha=${fecha}&hora=${hora}`
-  })
-    .then(response => response.text())
-    .then(text => {
-      if (text === "Creado con éxito") {
-        alert("Creado con éxito");
-      } else if (fecha === "2023-03-25" || fecha === "2023-04-01") {
-        // Verificar si la hora seleccionada ya está registrada más de 4 veces
-        const horaRegistrada = calendario.filter(function(item) {
-          return item.fecha === fecha && item.hora === hora;
-        });
-        if (horaRegistrada.length >= 4) {
-          alert("La hora seleccionada ya no se encuentra disponible");
-          location.reload();
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+  
+    fecha = form.elements.fecha.value;
+    hora = form.elements.hora.value;
+  
+    fetch("subir_datos.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `fecha=${fecha}&hora=${hora}`
+    })
+      .then(response => response.text())
+      .then(text => {
+        if (text === "Creado con éxito") {
+          alert("Creado con éxito");
+        } else if (fecha === "2023-03-25" || fecha === "2023-04-01") {
+          // Verificar si la hora seleccionada ya está registrada más de 4 veces
+          const horaRegistrada = calendario.filter(function(item) {
+            return item.fecha === fecha && item.hora === hora;
+          });
+          if (horaRegistrada.length >= 4) {
+            alert("La hora seleccionada ya no se encuentra disponible");
+            location.reload();
+          } else {
+            alert("La hora seleccionada ya se encuentra registrada");
+            location.reload();
+          }
         } else {
           alert("La hora seleccionada ya se encuentra registrada");
           location.reload();
         }
-      } else {
-        alert("La hora seleccionada ya se encuentra registrada");
-        location.reload();
-      }
-    })
-    .catch(error => {
-      console.error(error);
-      alert("Ha ocurrido un error inesperado. Por favor, inténtelo más tarde.");
-    });
-});
+      })
+      .catch(error => {
+        console.error(error);
+        alert("Ha ocurrido un error inesperado. Por favor, inténtelo más tarde.");
+      });
+  });
   

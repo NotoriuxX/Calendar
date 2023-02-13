@@ -18,7 +18,7 @@
         <!-- Sección para seleccionar una hora -->
         <div class="hora">
           <label for="hora">Hora:</label>
-          <select  class="select-hora" id="hora" name="hora">
+          <select  class="select-hora" id="hora" name="hora" size="auto">
             <option value="">Seleccione una hora</option>
           </select>
         </div>
@@ -26,7 +26,7 @@
 
       <!-- Botón para enviar los datos -->
       <div class="verificar">
-        <input type="submit" value="Verificar Hora">
+        <input type="submit" value="Recervar Hora">
       </div>
     </form>
   </div>

@@ -1,36 +1,51 @@
+/*Se definen variables de color en la raíz.*/
+:root {
+    --color-primary: rgb(63, 198, 243);
+    --color-primary-hover: rgb(63, 170, 243);
+    --color-background: #f2f2f2;
+    --color-white: white;
+    --color-gray: #ccc;
+    --color-black: rgb(0, 0, 0);
+  }
+/* Establece el fondo de la página como gris claro y centra el contenido */
 body {
-    background-color: #f2f2f2;
+    background-color: var(--color-background);;
     display: flex;
     justify-content: center;
 }
 
+/* Crea un borde redondeado para el formulario con una sombra ligera */
 .formulario {
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-gray);
     padding: 30px;
     display: inline-block;
-    background-color: white;
+    background-color: var(--color-white);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgb(0 0 0 / 10%);
 }
 
+/* Alinea los elementos del formulario en columna y los centra */
 form#mi-formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* Alinea los elementos de la sección "fecha-hora" uno al lado del otro */
 .fecha-hora {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
 
+/* Define el ancho y alineación de los elementos "fecha" y "hora" */
 .fecha, .hora {
     width: 48%;
     padding: 15px;
     text-align: left;
 }
 
+/* Define la apariencia de las etiquetas "label" */
 label {
     font-size: 18px;
     font-weight: bold;
@@ -38,29 +53,38 @@ label {
     display: block;
 }
 
+/* Define la apariencia del elemento de tipo "date" */
 input[type="date"] {
     width: 100%;
     height: 40px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-gray);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
 }
 
+/* Define la apariencia de los elementos "option" dentro del select */
+option {
+    font-size: 17px;
+    line-height: 2;
+}
+
+/* Define la apariencia del elemento select */
 select#hora {
-    width: 111%;
+    width: auto;
     height: 60px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-gray);
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 20px;
 }
 
+/* Define la apariencia del botón "submit" */
 input[type="submit"] {
-    background-color: rgb(63, 198, 243);
-    color: white;
+    background-color: var(--color-primary);
+    color: var(--color-white);
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
@@ -71,6 +95,8 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+/* Modifica el color del botón "submit"*/
+
 input[type="submit"]:hover {
-    background-color: rgb(63, 170, 243);
+    background-color: var(--color-primary-hover);
 }
