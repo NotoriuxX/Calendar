@@ -67,7 +67,9 @@ input[type="date"] {
 option:disabled {
  color: red;
  font-weight: 300 !important;
+ display: none;
 }
+
 option{
  font-weight: bold ;
 }
