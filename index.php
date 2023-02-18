@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="formulario">
-    <form id="mi-formulario" action="#" method="post">
+    <form id="mi-formulario" action="subir_datos.php" method="post">
       <div class="fecha-hora">
         <!-- Sección para seleccionar una fecha -->
         <div class="fecha">
